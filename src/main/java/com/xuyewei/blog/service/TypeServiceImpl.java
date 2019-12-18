@@ -52,7 +52,7 @@ public class TypeServiceImpl implements TypeService {
     public Type updateType(Long id, Type type) {
         Type t = typeRepository.findOne(id);
         if(t == null) {
-            throw new NotFoundException("不村子啊该类型");
+            throw new NotFoundException("不存在该类型");
         }
         BeanUtils.copyProperties(type, t);
 

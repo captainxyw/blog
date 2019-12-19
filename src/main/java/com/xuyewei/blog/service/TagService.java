@@ -4,6 +4,8 @@ import com.xuyewei.blog.po.Tag;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 
+import java.util.List;
+
 /**
  * ClassName:TagService
  * Package:com.xuyewei.blog.service
@@ -26,4 +28,8 @@ public interface TagService {
     Tag updateTag(Long id, Tag tag);
 
     void deleteTag(Long id);
+
+    List<Tag> listTag();
+
+    List<Tag> listTag(String ids);
 }

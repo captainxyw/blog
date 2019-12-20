@@ -37,6 +37,8 @@ public class Blog {
     @Temporal(TemporalType.TIMESTAMP)
     private Date updateTime;
 
+    private String description;
+
     @ManyToOne
     private Type type;
 
@@ -53,6 +55,14 @@ public class Blog {
     private User user;
 
     public Blog() {
+    }
+
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 
     public Long getId() {
@@ -191,26 +201,32 @@ public class Blog {
     }
 
 
-    @Override
-    public String toString() {
-        return "Blog{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", content='" + content + '\'' +
-                ", firstPicture='" + firstPicture + '\'' +
-                ", flag='" + flag + '\'' +
-                ", views=" + views +
-                ", appreciation=" + appreciation +
-                ", shareStatement=" + shareStatement +
-                ", commentabled=" + commentabled +
-                ", published=" + published +
-                ", recommend=" + recommend +
-                ", createTime=" + createTime +
-                ", updateTime=" + updateTime +
-                '}';
-    }
+  @Override
+  public String toString() {
+    return "Blog{" +
+        "id=" + id +
+        ", title='" + title + '\'' +
+        ", content='" + content + '\'' +
+        ", firstPicture='" + firstPicture + '\'' +
+        ", flag='" + flag + '\'' +
+        ", views=" + views +
+        ", appreciation=" + appreciation +
+        ", shareStatement=" + shareStatement +
+        ", commentabled=" + commentabled +
+        ", published=" + published +
+        ", recommend=" + recommend +
+        ", createTime=" + createTime +
+        ", updateTime=" + updateTime +
+        ", description='" + description + '\'' +
+        ", type=" + type +
+        ", tags=" + tags +
+        ", comments=" + comments +
+        ", tagIds='" + tagIds + '\'' +
+        ", user=" + user +
+        '}';
+  }
 
-    public Type getType() {
+  public Type getType() {
         return type;
     }
 

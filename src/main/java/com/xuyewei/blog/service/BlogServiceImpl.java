@@ -4,6 +4,7 @@ import com.xuyewei.blog.NotFoundException;
 import com.xuyewei.blog.dao.BlogRepository;
 import com.xuyewei.blog.po.Blog;
 import com.xuyewei.blog.po.Type;
+import com.xuyewei.blog.util.MyBeanUtils;
 import com.xuyewei.blog.vo.BlogQuery;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -82,7 +83,7 @@ public class BlogServiceImpl implements BlogService {
         if(b == null) {
             throw new NotFoundException("该博客不存在");
         }
-        BeanUtils.copyProperties(blog, b);
+        BeanUtils.copyProperties(blog, b, MyBeanUtils.getNullPropertyNames(blog));
         return blogRepository.save(b);
     }
     @Transactional

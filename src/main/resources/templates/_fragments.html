@@ -15,7 +15,7 @@
 
 
 <!--导航-->
-<nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small" >
+<nav th:fragment="menu(n)" class="ui inverted attached segment m-padded-tb-mini m-shadow-small">
   <div class="ui container">
     <div class="ui inverted secondary stackable menu">
       <h2 class="ui teal header item">Captainxyw's Blog</h2>
@@ -25,10 +25,12 @@
       <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==4} ? 'active'"><i class="mini clone icon"></i>归档</a>
       <a href="#" class="m-item item m-mobile-hide" th:classappend="${n==5} ? 'active'"><i class="mini info icon"></i>关于我</a>
       <div class="right m-item item m-mobile-hide">
-        <div class="ui icon inverted transparent input m-margin-tb-tiny">
-          <input type="text" placeholder="Search....">
-          <i class="search link icon"></i>
-        </div>
+        <form name="search" action="#" th:action="@{/search}" target="_blank" method="post">
+          <div class="ui icon inverted transparent input m-margin-tb-tiny">
+            <input type="text" placeholder="Search...." name="query" th:value="${query}">
+            <i class="search link icon" onclick="document.forms['search'].submit()"></i>
+          </div>
+        </form>
       </div>
     </div>
   </div>
@@ -38,7 +40,6 @@
 </nav>
 
 
-
 <!--底部footer-->
 <footer th:fragment="footer" class="ui inverted vertical segment m-padded-tb-massive">
   <div class="ui center aligned container">
@@ -46,12 +47,13 @@
       <div class="three wide column">
         <div class="ui inverted link list">
           <div class="item">
-            <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}"  class="ui rounded image" alt="" style="width: 110px">
+            <img src="../static/images/wechat.jpg" th:src="@{/images/wechat.jpg}" class="ui rounded image" alt=""
+                 style="width: 110px">
           </div>
         </div>
       </div>
       <div class="three wide column">
-        <h4 class="ui inverted header m-text-thin m-text-spaced " >最新博客</h4>
+        <h4 class="ui inverted header m-text-thin m-text-spaced ">最新博客</h4>
         <div class="ui inverted link list">
           <a href="#" class="item m-text-thin">用户故事（User Story）</a>
           <a href="#" class="item m-text-thin">用户故事（User Story）</a>
@@ -83,7 +85,8 @@
   <script src="../static/lib/prism/prism.js" th:src="@{/lib/prism/prism.js}"></script>
   <script src="../static/lib/tocbot/tocbot.min.js" th:src="@{/lib/tocbot/tocbot.min.js}"></script>
   <script src="../static/lib/qrcode/qrcode.min.js" th:src="@{/lib/qrcode/qrcode.min.js}"></script>
-  <script src="../static/lib/waypoints/jquery.waypoints.min.js" th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
+  <script src="../static/lib/waypoints/jquery.waypoints.min.js"
+          th:src="@{/lib/waypoints/jquery.waypoints.min.js}"></script>
 </th:block>
 
 </body>

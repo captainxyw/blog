@@ -1,7 +1,0 @@
-2019-12-15 18:51:52.600  INFO 1884 --- [restartedMain] com.xuyewei.blog.BlogApplication         : Starting BlogApplication on LAPTOP-1G387J7S with PID 1884 (D:\xuyewei\IDEAworkspace\blog\target\classes started by capta in D:\xuyewei\IDEAworkspace\blog)
-2019-12-15 18:51:52.601  INFO 1884 --- [restartedMain] com.xuyewei.blog.BlogApplication         : The following profiles are active: pro
-2019-12-15 18:51:55.061  WARN 1884 --- [restartedMain] .t.AbstractTemplateResolverConfiguration : Cannot find template location: classpath:/templates/ (please add some templates or check your Thymeleaf configuration)
-2019-12-15 18:51:55.465  INFO 1884 --- [restartedMain] com.xuyewei.blog.BlogApplication         : Started BlogApplication in 3.181 seconds (JVM running for 4.483)
-2019-12-15 19:08:42.877  INFO 8120 --- [restartedMain] com.xuyewei.blog.BlogApplication         : Starting BlogApplication on LAPTOP-1G387J7S with PID 8120 (D:\xuyewei\IDEAworkspace\blog\target\classes started by capta in D:\xuyewei\IDEAworkspace\blog)
-2019-12-15 19:08:42.878  INFO 8120 --- [restartedMain] com.xuyewei.blog.BlogApplication         : The following profiles are active: pro
-2019-12-15 19:08:45.753  INFO 8120 --- [restartedMain] com.xuyewei.blog.BlogApplication         : Started BlogApplication in 3.187 seconds (JVM running for 4.487)

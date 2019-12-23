@@ -526,6 +526,27 @@ h5,h6{font-size:1em;}
                   <a class="reply" data-commentid="1" data-commentnickname="Matt" th:attr="data-commentid=${comment.id},data-commentnickname=${comment.nickname}" onclick="reply(this)">回复</a>
                 </div>
               </div>
+              <div class="comments" th:if="${#arrays.length(comment.replyComments)}>0">
+                <div class="comment" th:each="replay : ${comment.replyComments}">
+                  <a class="avatar">
+                    <img src="https://unsplash.it/100/100?image=1005" th:src="@{${replay.avatar}}">
+                  </a>
+                  <div class="content">
+                    <a class="author">
+                      <span th:text="${replay.nickname}">小红</span>&nbsp;<span th:text="|@ ${replay.parentComment.nickname}|" class="m-teal">@ 小白</span>
+                    </a>
+                    <div class="metadata">
+                      <span class="date" th:text="${#dates.format(replay.createTime, 'yyyy-MM-dd HH:mm')}">Today at 5:42PM</span>
+                    </div>
+                    <div class="text" th:text="${replay.content}">
+                      How artistic!
+                    </div>
+                    <div class="actions">
+                      <a class="reply" data-commentid="1" data-commentnickname="Matt" th:attr="data-commentid=${replay.id},data-commentnickname=${replay.nickname}" onclick="reply(this)">回复</a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
             <!--/*-->
             <div class="comment">
@@ -771,6 +792,10 @@ h5,h6{font-size:1em;}
         }]
       }
     }
+  });
+
+  $(function () {
+    $("#comment-container").load(/*[[@{/comments/{id}(id=${blog.id})}]]*/);
   });
 
   $("#commentpost-btn").click(function () {

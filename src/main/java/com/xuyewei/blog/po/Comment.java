@@ -32,6 +32,7 @@ public class Comment {
     @ManyToOne
     private Comment parentComment;
 
+    private boolean adminComment;
 
     public Comment() {
     }
@@ -87,13 +88,17 @@ public class Comment {
     @Override
     public String toString() {
         return "Comment{" +
-                "id=" + id +
-                ", nickname='" + nickname + '\'' +
-                ", email='" + email + '\'' +
-                ", content='" + content + '\'' +
-                ", avatar='" + avatar + '\'' +
-                ", createTime=" + createTime +
-                '}';
+            "id=" + id +
+            ", nickname='" + nickname + '\'' +
+            ", email='" + email + '\'' +
+            ", content='" + content + '\'' +
+            ", avatar='" + avatar + '\'' +
+            ", createTime=" + createTime +
+            ", blog=" + blog +
+            ", replyComments=" + replyComments +
+            ", parentComment=" + parentComment +
+            ", adminComment=" + adminComment +
+            '}';
     }
 
     public Blog getBlog() {
@@ -116,7 +121,16 @@ public class Comment {
         return parentComment;
     }
 
+    public boolean isAdminComment() {
+        return adminComment;
+    }
+
+    public void setAdminComment(boolean adminComment) {
+        this.adminComment = adminComment;
+    }
+
     public void setParentComment(Comment parentComment) {
+
         this.parentComment = parentComment;
     }
 }
